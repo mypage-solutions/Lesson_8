@@ -66,6 +66,9 @@ public class HappyTickets {
         System.out.printf("The execution time: %.3f s\n", timeDifferenceSeconds);
     }
 
+    /*
+    If bus tickets numbers from 00000001 to 99999999
+    */
     private static void findSumMatches3(int value) {
         int arrayCount = (int) Math.sqrt(value);
         int count = 0;
@@ -96,7 +99,6 @@ public class HappyTickets {
         double timeDifferenceSeconds = (System.currentTimeMillis() - time) / 1000.0;
         System.out.println("The result is: " + count);
         System.out.printf("The execution time: %.3f s\n", timeDifferenceSeconds);
-
     }
 
     private static void findSumMatches4(int value) {
@@ -117,10 +119,10 @@ public class HappyTickets {
             for (int n = 0; n < arrayLeft.length; n++) {
                 tempLeft1 = tempLeft % 10;
                 tempLeft2 = tempLeft - tempLeft1;
-                arrayRight[arrayLeft.length - n - 1] = tempLeft1;
+                arrayLeft[arrayLeft.length - n - 1] = tempLeft1;
                 tempLeft = tempLeft2 / 10;
-                sumLeft = Arrays.stream(arrayRight).sum();
             }
+            sumLeft = Arrays.stream(arrayLeft).sum();
 
             for (int j = 0; j < arrayCount; j++) {
                 int tempRight;
